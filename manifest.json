@@ -1,0 +1,15 @@
+{
+  "name": "Twitter Exporter",
+  "description": "Export tweets from any profile to JSON",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting", "downloads"],
+  "action": { "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*", "https://x.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
